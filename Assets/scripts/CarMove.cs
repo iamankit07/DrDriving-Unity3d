@@ -67,11 +67,11 @@ public class carMove : MonoBehaviour
       FrontRightwheelcollider.steerAngle=motionforce* horizontalInput;
        FrontLeftwheelcollider.steerAngle=motionforce* horizontalInput;
     }
-    // void PowerSteering(){
-    //   if(horizontalInput==0){
-    //    transform.rotation=Quaternion.Slerp(transform.rotation,Quaternion.euler(0,0,0),Time.deltaTime);
-    //   }
-    // }
+    void PowerSteering(){
+      if(horizontalInput==0){
+       transform.rotation=UnityEngine.Quaternion.Slerp(transform.rotation,UnityEngine.Quaternion.Euler(0,0,0),Time.deltaTime);
+      }
+    }
     void UpdateWheels()
     {
       RotateWheel(FrontRightwheelcollider, FrontRightwheelTransform);
@@ -79,11 +79,11 @@ public class carMove : MonoBehaviour
 
     void RotateWheel(WheelCollider wheelCollider,Transform transform)
     {
-      // Vector3 pos;
-      // Quaternion rotation;
+      UnityEngine.Vector3 pos;
+      UnityEngine.Quaternion rotation;
       
-//       wheelCollider.GetWorldPose(out pos,out rotation );  //store position and rotation in variable pos and rot.
-//       transform.position=pos;
-//       transform.rotation=rotation;
+      wheelCollider.GetWorldPose(out pos,out rotation );  //store position and rotation in variable pos and rot.
+      transform.position=pos;
+      transform.rotation=rotation;
     }
 }
