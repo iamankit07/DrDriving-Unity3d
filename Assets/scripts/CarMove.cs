@@ -26,6 +26,7 @@ public class carMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rigidbody1 =GetComponent<Rigidbody>();
         rigidbody1.centerOfMass=carCentreOfMassTransform.localPosition;
     }
 
@@ -37,6 +38,8 @@ public class carMove : MonoBehaviour
       GetInputs();
       Steering();
       Brakes();
+       PowerSteering();
+      Debug.Log(CarSpeed());
     }
     void GetInputs()
     {
@@ -85,5 +88,9 @@ public class carMove : MonoBehaviour
       wheelCollider.GetWorldPose(out pos,out rotation );  //store position and rotation in variable pos and rot.
       transform.position=pos;
       transform.rotation=rotation;
+    }
+    public float CarSpeed(){
+       float speed =rigidbody1.velocity.magnitude*2.23693629f;
+       return speed;
     }
 }

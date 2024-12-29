@@ -66,6 +66,11 @@
   <ItemGroup>
     <Compile Include="Assets\scripts\FollowCar.cs" />
     <Compile Include="Assets\scripts\CarMove.cs" />
+    <Compile Include="Assets\scripts\DestroyerOnContact.cs" />
+    <Compile Include="Assets\scripts\VechicleMove.cs" />
+    <Compile Include="Assets\scripts\CameraMovement.cs" />
+    <Compile Include="Assets\scripts\TrafficManager.cs" />
+    <Compile Include="Assets\scripts\LaneMovement.cs" />
     <Compile Include="Assets\scripts\EndlessCity.cs" />
   </ItemGroup>
   <ItemGroup>
